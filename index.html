@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Music Galaxy 🎵</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #100b24, #40136b);
+  color: white;
+  text-align: center;
+}
+header { padding: 35px 15px; }
+h1 { color: #e0b3ff; font-size: 38px; }
+input {
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  width: 80%;
+  max-width: 350px;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+.card {
+  background: #281942;
+  border: 1px solid #8152a8;
+  border-radius: 20px;
+  padding: 25px;
+  width: 250px;
+}
+.cover { font-size: 65px; }
+button {
+  background: #d6a0ff;
+  color: #21102f;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+}
+footer { padding: 30px; color: #d5c1e8; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🌌 Music Galaxy</h1>
+  <p>به دنیای موسیقی خوش اومدی! 💜</p>
+  <input id="search" placeholder="جست‌وجوی آهنگ..."
+         oninput="searchSongs()">
+</header>
+
+<div class="container" id="songs">
+  <div class="card">
+    <div class="cover">🎧</div>
+    <h2>آهنگ‌های محبوب</h2>
+    <p>موسیقی‌هایی برای حال خوب</p>
+    <button onclick="alert('به‌زودی آهنگ اضافه می‌کنیم! 🎵')">
+      🎶 گوش کن
+    </button>
+  </div>
+
+  <div class="card">
+    <div class="cover">🌙</div>
+    <h2>موسیقی شب</h2>
+    <p>لحظه‌های آروم و قشنگ</p>
+    <button onclick="alert('به‌زودی آهنگ اضافه می‌کنیم! 💜')">
+      🎶 گوش کن
+    </button>
+  </div>
+
+  <div class="card">
+    <div class="cover">⚡</div>
+    <h2>موسیقی پرانرژی</h2>
+    <p>برای روزهای هیجان‌انگیز</p>
+    <button onclick="alert('به‌زودی آهنگ اضافه می‌کنیم! 🚀')">
+      🎶 گوش کن
+    </button>
+  </div>
+</div>
+
+<footer>ساخته‌شده با 💜 برای عاشقان موسیقی</footer>
+
+<script>
+function searchSongs() {
+  const q = document.getElementById("search")
+    .value.toLowerCase();
+
+  document.querySelectorAll(".card").forEach(card => {
+    card.style.display =
+      card.innerText.toLowerCase().includes(q)
+        ? "" : "none";
+  });
+}
+</script>
+</body>
+</html>
